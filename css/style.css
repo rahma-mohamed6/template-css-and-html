@@ -1,0 +1,484 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+:root {
+  --min-color: #1b97b7;
+}
+html {
+  scroll-behavior: smooth;
+}
+ul {
+  list-style: none;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.min-title {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 600px;
+  padding: 10px;
+}
+.min-title h1 {
+  width: fit-content;
+  text-transform: uppercase;
+  position: relative;
+  padding: 30px;
+  font-size: 35px;
+  margin: 20px auto;
+}
+.min-title h1::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translate(-50%, 50%);
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 2;
+  border: 1px solid var(--min-color);
+}
+.min-title h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+  bottom: 10px;
+  height: 1px;
+  background-color: var(--min-color);
+}
+.min-title p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.7;
+}
+section {
+  margin: 50px 0;
+  width: 100%;
+}
+
+/* ************ */
+header {
+  width: 100%;
+  height: 50px;
+  position: relative;
+}
+header .container {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+}
+header .container::after {
+  content: "";
+  position: absolute;
+  bottom: 1px;
+  background-color: white;
+  left: 10px;
+  height: 1px;
+
+  width: calc(100% - 30px);
+}
+header .container .logo img {
+  height: 40px;
+}
+header .container ul {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+header .container ul li a {
+  padding: 15px 20px;
+  color: white;
+  font-size: 14px;
+  transition: 0.3s;
+  position: relative;
+  z-index: 3;
+}
+header .container ul li .active {
+  color: var(--min-color);
+  border-bottom: 1px solid var(--min-color);
+}
+header .container ul li a:hover {
+  color: var(--min-color);
+  border-bottom: 1px solid var(--min-color);
+}
+header .container ul li a:hover + .container ul li .active {
+  color: white;
+  border: none;
+}
+header .toggle-menu {
+  color: white;
+  font-size: 22px;
+}
+nav {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.442), rgba(0, 0, 0, 0.533)),
+    url(../image/landing.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+}
+nav .landing {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 70%;
+  height: 300px;
+  max-height: fit-content;
+  margin: auto;
+  background-color: #1b98b792;
+}
+nav .landing .container {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+}
+nav .landing .container .text {
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+}
+nav .landing .container .text h3 {
+  text-transform: uppercase;
+  color: white;
+  margin: 15px 0;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+nav .landing .container .text p {
+  line-height: 1.7;
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: white;
+  margin-top: 10px;
+}
+nav .button {
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+
+  width: 100px;
+  transform: translate(-50%, 50%);
+}
+nav .button span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid white;
+  margin: 0 5px;
+}
+nav .button .active {
+  border: none;
+  background-color: var(--min-color);
+}
+.serivces .container .row {
+  margin-top: 50px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+}
+.serivces .container .row .card {
+  text-align: center;
+  padding: 20px;
+}
+.serivces .container .row .card .svg-box i {
+  font-size: 45px;
+}
+.serivces .container .row .card h3 {
+  color: var(--min-color);
+  margin: 20px 0;
+  font-size: 25px;
+}
+.serivces .container .row .card p {
+  line-height: 1.4;
+  color: #333;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+/* ************ */
+.our {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.447), rgba(0, 0, 0, 0.503)),
+    url(../image/design-features.jpg);
+  width: 100%;
+  height: 80vh;
+  padding: 50px 0;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+}
+.our .container .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+}
+.our .container .row .card {
+  padding: 30px 10px;
+  background-color: #1b98b792;
+
+  color: white;
+}
+.our .container .row .card h2 {
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+.our .container .row .card ul {
+  list-style: none;
+}
+.our .container .row .card ul li {
+  padding: 15px 0;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+.our .container .row .card ul li i {
+  margin-right: 15px;
+}
+.our .container .row .image {
+  position: relative;
+  text-align: center;
+}
+.our .container .row .image img {
+  position: absolute;
+  left: 50%;
+  bottom: -50px;
+  transform: translate(-50%, 50%);
+}
+/*************************/
+.portfolio {
+  width: 100%;
+  padding: 0;
+  text-align: center;
+}
+
+.portfolio .container .menu {
+  margin: 50px auto;
+  width: fit-content;
+}
+.portfolio .container .menu ul {
+  display: flex;
+  list-style: none;
+}
+.portfolio .container .menu ul li a {
+  padding: 10px 20px;
+  color: black;
+  font-size: 18px;
+}
+.portfolio .container .menu ul li .active {
+  background-color: var(--min-color);
+  color: white;
+}
+.portfolio .container .row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0;
+}
+.portfolio .container .row .card {
+  height: 200px;
+  position: relative;
+  transition: 0.4s;
+}
+.portfolio .container .row .card .image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  transition: 0.4s;
+}
+.portfolio .container .row .card .image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.portfolio .container .row .card:hover img {
+  transform: rotate(10deg) scale(1.2);
+}
+.portfolio .container .row .card .text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  color: black;
+  display: none;
+  z-index: 3;
+  transition: 0.3s;
+}
+.portfolio .container .row .card .text:last-child {
+  color: var(--min-color);
+}
+.portfolio .container .row .card:hover .text {
+  display: block;
+}
+.portfolio .container .row .card .text p {
+  padding: 5px;
+}
+.super {
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.596), rgba(0, 0, 0, 0.543));
+  z-index: 1;
+}
+.super video {
+  width: 100%;
+}
+.super .text {
+  width: 100%;
+  background-color: #1b98b792;
+  position: absolute;
+  z-index: 2;
+  top: 30%;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  padding: 20px 0;
+  color: white;
+}
+.super .text h2 {
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+.super .text p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+.super .text a {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  display: block;
+  margin: 20px auto;
+  width: fit-content;
+}
+/* ********************* */
+.email {
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.637), rgba(0, 0, 0, 0.613)),
+    url(../image/subscribe.jpg);
+  background-position: center;
+  background-size: cover;
+  align-items: center;
+  text-align: center;
+  padding: 60px 5px;
+  position: relative;
+}
+.email form {
+  width: fit-content;
+  height: fit-content;
+  margin: 0 auto;
+  text-align: center;
+}
+.email form .input {
+  border: 1px solid white;
+  margin: 2px 0;
+  display: inline-block;
+}
+.email form .input i {
+  color: white;
+  display: inline-block;
+  margin: 0 20px;
+}
+.email form .input input {
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+.email form .input input::placeholder {
+  color: white;
+  text-align: center;
+}
+.email form .input input[type="submit"] {
+  padding: 10px;
+  height: 50px;
+  width: fit-content;
+  background-color: var(--min-color);
+}
+.email p {
+  color: white;
+  margin: 15px 0;
+  line-height: 1.7;
+  font-size: 18px;
+}
+.accument{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.702),rgba(0, 0, 0, 0.463)),url(../image/quote.jpg);
+  text-align: center;
+  align-items: center;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 50vh;
+  padding: 60px 0;
+}
+.accument p{
+
+  margin: 20px 0;
+  color:white;
+  font-size: 20px;
+}
+
+footer{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55),rgba(0, 0, 0, 0.617)),url(../image/subscribe.jpg);
+  width: 100%;
+  padding: 50px 0;
+  color:white;
+  text-align: center;
+}
+footer .text img{
+  margin: 20px 0;
+}
+footer .text h2{
+  margin: 20px auto;
+  position: relative;
+  width: fit-content;
+}
+footer .text h2::after{
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left:0;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+}
+footer .text .icon{
+  margin: 30px auto;
+  width: fit-content;
+  display: flex;
+}
+footer .text .icon i{
+  margin:  0 10px;
+  font-size: 20px;
+}
+footer .text .make {
+  font-size: 18px;
+  letter-spacing: 1.5px;
+}
+footer .text .make span{
+  color:var(--min-color);
+  font-size: 20px;
+  text-transform: uppercase;
+}
